@@ -4,16 +4,13 @@ getLightTheme() {
   return ThemeData(
     primarySwatch: Colors.deepPurple,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.light(
-      error: Colors.red,
+    colorScheme: const ColorScheme.light(
       primary: Colors.deepPurple,
+      onPrimary: Colors.white,
       secondary: Colors.pink,
-      tertiary: Colors.teal,
-      surface: Colors.white,
-      onPrimary: Colors.deepPurple,
       onSecondary: Colors.pinkAccent,
-      brightness: Brightness.light,
-      onError: Colors.red,
+      tertiary: Colors.teal,
+      onTertiary: Colors.white,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Color.fromRGBO(229, 219, 255, 0),

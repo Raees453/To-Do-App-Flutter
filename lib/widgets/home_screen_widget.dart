@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_app/utils/utils.dart';
+import 'package:to_do_app/widgets/progress_to_do_widget.dart';
 import 'package:to_do_app/widgets/to_do_widget.dart';
 import 'package:to_do_app/widgets/today_task_widget.dart';
 
@@ -32,13 +33,14 @@ class HomeScreenWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 const TodayTaskWidget(),
-                const SizedBox(height: 15),
+                const SizedBox(height: 25),
                 _headingTask(context, 'To Do', 3),
-                SizedBox(height: 20),
-                _listToDoTasks(),
                 const SizedBox(height: 15),
+                _listToDoTasks(),
+                const SizedBox(height: 25),
                 _headingTask(context, 'In Progress', 7),
-                SizedBox(height: 20),
+                const SizedBox(height: 5),
+                _listProgressToDoTasks(),
               ],
             ),
           ),
@@ -68,7 +70,6 @@ class HomeScreenWidget extends StatelessWidget {
           ),
         ),
       ],
-      // fit: StackFi,
     );
   }
 
@@ -112,6 +113,15 @@ class HomeScreenWidget extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) => const ToDoWidget(),
       ),
+    );
+  }
+
+  _listProgressToDoTasks() {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: 7,
+      primary: false,
+      itemBuilder: (_, index) => ProgressToDoWidget(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:to_do_app/screens/home_screen.dart';
 import 'package:to_do_app/utils/theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
